@@ -32,6 +32,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    - name: Checkout
+      uses: actions/checkout@v2 # Required to mount the Github Workspace to a volume
     - name: Run the Wiremock container
       uses: addnab/docker-run-action@v3
       with:
