@@ -30,7 +30,7 @@ public class NoaaWeatherService {
           String.class, stationId);
       final String content = response.getBody();
 
-      if (StringUtils.isBlank(content)) {
+      if (content == null) {
         return Optional.empty();
       }
 
