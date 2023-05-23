@@ -87,9 +87,9 @@ tasks.jacocoTestReport {
 
 sonarqube {
     properties {
-        property "sonar.projectKey", "tendryll_snapshot"
-        property "sonar.organization", "tendryll-1"
-        property "sonar.host.url", "https://sonarcloud.io"
+        property("sonar.projectKey", "tendryll_snapshot")
+        property("sonar.organization", "tendryll-1")
+        property("sonar.host.url", "https://sonarcloud.io")
     }
 }
 
