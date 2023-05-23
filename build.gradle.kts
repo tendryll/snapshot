@@ -27,6 +27,7 @@ dependencies {
     testImplementation("io.cucumber:cucumber-spring:7.12.0")
     testImplementation("org.junit.platform:junit-platform-suite:1.10.0-M1")
     testImplementation("org.skyscreamer:jsonassert:1.5.1")
+    testImplementation("com.github.tomakehurst:wiremock-standalone:3.0.0-beta-8")
 }
 
 tasks.withType<Test> {
