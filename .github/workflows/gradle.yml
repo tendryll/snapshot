@@ -33,7 +33,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Run the Wiremock container
-      run: docker run -d --label ed866e --network ${{ job.container.network }} --network-alias wiremock -p 8080:8080 -e GITHUB_ACTIONS=true -e CI=true -v "src/test/resources/wiremock":"/home/wiremock" wiremock/wiremock
+      uses: addnab/docker-run-action@v3
+      with:
+        image: wiremock/wiremock:latest
+        options: -v ${{ github.workspace }}/src/test/resources/wiremock:/home/wiremock -p 8080:8080
     - name: Set up JDK 17
       uses: actions/setup-java@v3
       with:
