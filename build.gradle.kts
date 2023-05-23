@@ -5,6 +5,8 @@ plugins {
     java
     id("org.springframework.boot") version "3.1.0"
     id("io.spring.dependency-management") version "1.1.0"
+    jacoco
+    id("org.sonarqube") version "3.5.0.2730"
 }
 
 group = "io.aleksandr.labs"
@@ -69,3 +71,25 @@ tasks.withType<Test> {
         info.exceptionFormat = debug.exceptionFormat
     }
 }
+
+tasks.test {
+    finalizedBy(tasks.jacocoTestReport) // report is always generated after tests run
+}
+
+tasks.jacocoTestReport {
+    dependsOn(tasks.test) // tests are required to run before generating the report
+    reports {
+        xml.required.set(true)
+        csv.required.set(true)
+        html.outputLocation.set(layout.buildDirectory.dir("jacocoHtml"))
+    }
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectKey", "tendryll_snapshot"
+        property "sonar.organization", "tendryll-1"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
+}
+
