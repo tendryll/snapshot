@@ -1,22 +1,22 @@
 {
   "dewpoint": {
     "unitType": "C",
-    "value": "11.279999999999999"
+    "value": "12.380000000000001"
   },
   "temperature": {
     "unitType": "C",
-    "value": "14.32"
+    "value": "16.699999999999999"
   },
   "relativeHumidity": {
     "unitType": "%",
-    "value": "81.958525516736998"
+    "value": "75.659205358880001"
   },
   "windDirection": {
     "unitType": "∘",
-    "value": "244.69999999999999"
+    "value": "294.5"
   },
   "windSpeed": {
     "unitType": "km/h",
-    "value": "4.7160000000000002"
+    "value": "3.024"
   }
 }

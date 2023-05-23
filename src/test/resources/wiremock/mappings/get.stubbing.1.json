@@ -1,7 +1,7 @@
 {
   "request": {
     "method": "GET",
-    "url": "/weather/039PG"
+    "url": "/stations/039PG/observations/latest"
   },
   "response": {
     "status": 200,
