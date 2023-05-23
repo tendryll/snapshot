@@ -1,8 +1,6 @@
 package io.aleksandr.labs.snapshot.service;
 
-import com.apicatalog.jsonld.JsonLdError;
 import com.apicatalog.jsonld.document.Document;
-import io.aleksandr.labs.snapshot.exception.BadGatewayException;
 import io.aleksandr.labs.snapshot.model.DataPoint;
 import io.aleksandr.labs.snapshot.model.DataTypes;
 import io.aleksandr.labs.snapshot.model.stations.observations.response.WeatherInfo;
