@@ -17,10 +17,19 @@ permissions:
   contents: read
 
 jobs:
-  build:
-
+  containers:
     runs-on: ubuntu-latest
-
+    services:
+      wiremock:
+        image: wiremock/wiremock
+        ports:
+          - 8080:8080
+        volumes:
+          - src/test/resources/wiremock:/home/wiremock
+    steps:
+      - uses: actions/checkout@v3
+  build-and-test:
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 17
