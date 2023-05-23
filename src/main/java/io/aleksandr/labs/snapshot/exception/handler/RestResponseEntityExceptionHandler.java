@@ -1,7 +1,6 @@
 package io.aleksandr.labs.snapshot.exception.handler;
 
 import io.aleksandr.labs.snapshot.exception.BadGatewayException;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -10,8 +9,9 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 @ControllerAdvice
 public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
+
   @ExceptionHandler(value = {BadGatewayException.class})
-  protected ResponseEntity<Void> handleConflict() {
-    return ResponseEntity.status(HttpStatus.BAD_GATEWAY).build();
+  protected ResponseEntity<Void> handleBadGateway(BadGatewayException ex, WebRequest request) {
+    return ResponseEntity.status(ex.getGatewayStatusCode()).build();
   }
 }

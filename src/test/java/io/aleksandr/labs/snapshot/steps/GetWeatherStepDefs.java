@@ -1,6 +1,6 @@
 package io.aleksandr.labs.snapshot.steps;
 
-import io.aleksandr.labs.snapshot.SpringIntegrationTest;
+import io.aleksandr.labs.snapshot.SpringIntegrationTestSetup;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -13,18 +13,13 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.ResponseEntity;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
-import java.nio.charset.StandardCharsets;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class GetWeatherStepDefs extends SpringIntegrationTest {
+public class GetWeatherStepDefs extends SpringIntegrationTestSetup {
   @Value(value = "${local.server.port}")
   private int port;
 

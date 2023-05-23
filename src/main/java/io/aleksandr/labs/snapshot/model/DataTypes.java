@@ -12,6 +12,9 @@ public class DataTypes {
       "percent", "%"
   );
 
+  private DataTypes() {
+  }
+
   public static String getValue(String key) {
     return unitTypes.get(key);
   }

@@ -22,7 +22,6 @@ public class WeatherService {
   }
 
   public WeatherInfo get(String stationId) {
-    try {
       final Document document = noaaWeatherService.latestWeather(stationId);
       final Optional<JsonStructure> jsonContent = document.getJsonContent();
       final WeatherInfo weatherInfo = new WeatherInfo();
@@ -51,9 +50,6 @@ public class WeatherService {
       addData(weatherInfo.getData(), "heatIndex", jsonContent.get().getValue("/properties/heatIndex").asJsonObject());
 
       return weatherInfo;
-    } catch (JsonLdError e) {
-      throw new BadGatewayException(e);
-    }
   }
 
   private void addData(Map<String, DataPoint> data, String name, JsonObject element) {

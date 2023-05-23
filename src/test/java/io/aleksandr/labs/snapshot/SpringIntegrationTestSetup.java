@@ -9,5 +9,5 @@ import org.springframework.test.context.ContextConfiguration;
 @SpringBootTest(classes = SnapshotApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ContextConfiguration(initializers = {WireMockInitializer.class}, classes = {SnapshotApplication.class})
 @ActiveProfiles("qa")
-public class SpringIntegrationTest {
+public class SpringIntegrationTestSetup {
 }
