@@ -23,9 +23,10 @@ class WeatherController {
 
   @GetMapping(value = "/{stationId}", produces = {"application/json"})
   ResponseEntity<WeatherInfo> get(@PathVariable String stationId) {
-    final HttpHeaders responseHeaders = new HttpHeaders();
-    responseHeaders.set("aleksandr.io", "sean@aleksandr.cc");
+//    final HttpHeaders responseHeaders = new HttpHeaders();
+//    responseHeaders.set("aleksandr.io", "sean@aleksandr.cc");
 
-    return ResponseEntity.ok().headers(responseHeaders).body(weatherService.get(stationId));
+    // return ResponseEntity.ok().headers(responseHeaders).body(weatherService.get(stationId));
+    return ResponseEntity.ok().body(weatherService.get(stationId));
   }
 }
